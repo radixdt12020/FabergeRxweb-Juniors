@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <h1>
+            Registration Form
+          </h1>
+          <div>
+            <div>
+                <form  [formGroup]="companyFormGroup">
+                  <div class="form-group">
+                    <label>Customer Id</label>
+                    <input type="text" formControlName="customerId" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerId?.errors">{{companyFormGroup.controls.customerId.errors?.startsWith?.message}}</small>	
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerId?.errors">{{companyFormGroup.controls.customerId.errors?.required?.message}}</small>             	
+                  </div>
+                  <div class="form-group">
+                    <label>Customer Name</label>
+                    <input type="text" formControlName="customerName" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerName?.errors">{{companyFormGroup.controls.customerName.errors?.required?.message}}</small>	
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerName?.errors">{{companyFormGroup.controls.customerName.errors?.alpha?.message}}</small>
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerName?.errors">{{companyFormGroup.controls.customerName.errors?.minLength?.message}}</small>
+                  </div>
+                  <div class="form-group">
+                    <label>Country Name</label>
+                    <input type="text" formControlName="countryName" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.countryName?.errors">{{companyFormGroup.controls.countryName.errors?.required?.message}}</small>	
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" formControlName="customerEmail" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerEmail?.errors">{{companyFormGroup.controls.customerEmail.errors?.required?.message}}</small>	
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerEmail?.errors">{{companyFormGroup.controls.customerEmail.errors?.lowerCase?.message}}</small>
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerEmail?.errors">{{companyFormGroup.controls.customerEmail.errors?.email?.message}}</small>
+                  </div>
+                  <div class="form-group">
+                    <label>Current Balance</label>
+                    <input type="text" formControlName="customerCurrentBalance" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerCurrentBalance?.errors">{{companyFormGroup.controls.customerCurrentBalance.errors?.required?.message}}</small>	
+                  </div>
+                  <div class="form-group">
+                    <label>Minimum Balance</label>
+                    <input type="text" formControlName="customerMinBalance" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerMinBalance?.errors">{{companyFormGroup.controls.customerMinBalance.errors?.required?.message}}</small>	
+                  </div>
+                  <div class="form-group">
+                    <label>Pincode</label>
+                    <input type="text" formControlName="customerPincode" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerPincode?.errors">{{companyFormGroup.controls.customerPincode.errors?.required?.message}}</small>	                    
+                    <!-- <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerPincode?.errors">{{companyFormGroup.controls.customerPincode.errors?.range?.message}}</small> -->
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerPincode?.errors">{{companyFormGroup.controls.customerPincode.errors?.maxLength?.message}}</small>
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerPincode?.errors">{{companyFormGroup.controls.customerPincode.errors?.minLength?.message}}</small>
+                  </div>
+                  <div class="form-group">
+                    <label>Company Website Url</label>
+                    <input type="text" formControlName="companyWebsiteURL" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.companyWebsiteURL?.errors">{{companyFormGroup.controls.companyWebsiteURL.errors?.required?.message}}</small>	                    
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.companyWebsiteURL?.errors">{{companyFormGroup.controls.companyWebsiteURL.errors?.url?.message}}</small>
+                  </div>
+                  <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="text" formControlName="customerMobileNumber" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.customerMobileNumber?.errors">{{companyFormGroup.controls.customerMobileNumber.errors?.required?.message}}</small>	
+                  </div>
+                  <div class="form-group">
+                    <label>Date Of Birth</label>
+                    <input type="text" formControlName="DateOfBirth" class="form-control"  />
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.DateOfBirth?.errors">{{companyFormGroup.controls.DateOfBirth.errors?.required?.message}}</small>	
+                    <small class="form-text text-danger" *ngIf="companyFormGroup.controls.DateOfBirth?.errors">{{companyFormGroup.controls.DateOfBirth.errors?.date?.message}}</small>
+                  </div>
+                  <button (click) = "saveData()" [disabled]="!companyFormGroup.valid" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
