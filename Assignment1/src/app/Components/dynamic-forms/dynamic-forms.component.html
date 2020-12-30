@@ -1,0 +1,16 @@
+<h3 class="text-center">Enter Customers Details</h3>
+<br>
+<div class="row" style="justify-content: center;">
+    <form [formGroup]="dynamicFormBuildConfig.formGroup">
+        <div viewMode="basic" [rxwebDynamicForm]="dynamicFormBuildConfig" [uiBindings]="uiBindings">
+        </div>
+        <div class="text-center">
+        <button [disabled]="!dynamicFormBuildConfig.formGroup.valid" class="btn btn-primary">Submit</button>
+        </div>
+        <br>
+    </form>
+</div>
+
+
+
+

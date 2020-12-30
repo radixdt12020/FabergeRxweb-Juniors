@@ -1,0 +1,93 @@
+<h3 class="text-center">Enter Customers Details</h3>
+<br>
+<div class="row"  style="justify-content: center;">
+    <form [formGroup]="cusFormGroup">
+        <table class="table">
+            <tr>
+                <td>Customer ID</td>
+                <td>
+                    <input type="text" formControlName="CustomerID">
+                    <div *ngIf="cusFormGroup.controls.CustomerID?.errors" class="text-danger">{{cusFormGroup.controls.CustomerID.errors?.required?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.CustomerID?.errors" class="text-danger">{{cusFormGroup.controls.CustomerID.errors?.startsWith?.message}}</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Customer Name</td>
+                <td>
+                    <input type="text" formControlName="CustomerName">
+                    <div *ngIf="cusFormGroup.controls.CustomerName?.errors" class="text-danger">{{cusFormGroup.controls.CustomerName.errors?.required?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.CustomerName?.errors" class="text-danger">{{cusFormGroup.controls.CustomerName.errors?.alpha?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.CustomerName?.errors" class="text-danger">{{cusFormGroup.controls.CustomerName.errors?.maxLength?.message}}</div>
+
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>Country Name</td>
+                <td>
+                    <input type="text" formControlName="CountryName">
+                    <div *ngIf="cusFormGroup.controls.CountryName.errors" class="text-danger">{{cusFormGroup.controls.CountryName.errors.required.message}}</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <input type="text" formControlName="DOB">
+                    <div *ngIf="cusFormGroup.controls.DOB?.errors" class="text-danger">{{cusFormGroup.controls.DOB.errors?.required?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.DOB?.errors" class="text-danger">{{cusFormGroup.controls.DOB.errors?.date?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.DOB?.errors" class="text-danger">{{cusFormGroup.controls.DOB.errors?.maxDate?.message}}</div>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td>Current Balance</td>
+                <td>
+                    <input type="text" formControlName="CurBalance">
+                    <div *ngIf="cusFormGroup.controls.CurBalance.errors" class="text-danger">{{cusFormGroup.controls.CurBalance.errors.required.message}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>Email-ID</td>
+                <td>
+                    <input type="text" formControlName="EmailId">
+                    <div *ngIf="cusFormGroup.controls.EmailId?.errors" class="text-danger">{{cusFormGroup.controls.EmailId.errors?.required?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.EmailId?.errors" class="text-danger">{{cusFormGroup.controls.EmailId.errors?.email?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.EmailId?.errors" class="text-danger">{{cusFormGroup.controls.EmailId.errors?.lowerCase?.message}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>Minimum Balance</td>
+                <td>
+                    <input type="text" formControlName="MinBalance">
+                    <div *ngIf="cusFormGroup.controls.MinBalance.errors" class="text-danger">{{cusFormGroup.controls.MinBalance.errors.required.message}}</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>PinCode</td>
+                <td>
+                    <input type="text" formControlName="PinCode">
+                    <div *ngIf="cusFormGroup.controls.PinCode?.errors" class="text-danger">{{cusFormGroup.controls.PinCode.errors?.required?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.PinCode?.errors" class="text-danger">{{cusFormGroup.controls.PinCode.errors?.minLength?.message}}</div>
+                    <div *ngIf="cusFormGroup.controls.PinCode?.errors" class="text-danger">{{cusFormGroup.controls.PinCode.errors?.maxLength?.message}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>Company WebSite</td>
+                <td>
+                    <input type="text" formControlName="CompanyWebSite">
+                    <div *ngIf="cusFormGroup.controls.CompanyWebSite.errors" class="text-danger">{{cusFormGroup.controls.CompanyWebSite.errors.url.message}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                <button [disabled]="!cusFormGroup.valid" class="btn btn-primary">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
