@@ -27,12 +27,15 @@
             <br>
             <br>
             <button class="btn btn-primary" (click) = "addOption()">Add Option</button>
-            <div *ngFor="let optionGroup of formGroup.get('options').controls;let i = index" [formGroup]="optionGroup">
-                <div>
+
+            <!-- array code  -->
+            <div formArrayName= "options" *ngFor="let optionGroup of getOption.controls;let i = index">
+                <div formGroupName="{{i}}">
                   <label>Option {{i + 1}}</label>
                   <input type="text" formControlName="nameOfOption" class="form-control">
                 </div>
             </div>
+            <!-- array code -->
             <br>
             <button *ngIf="isSubmit" [disabled]="!formGroup.valid" (click)="submit()" class="btn btn-secondary">Submit</button>  
             <button *ngIf="isEdit" [disabled]="!formGroup.valid" (click)="editSaveData()" class="btn btn-secondary">Edit</button>  

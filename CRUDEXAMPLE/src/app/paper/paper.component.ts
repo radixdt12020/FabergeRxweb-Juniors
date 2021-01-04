@@ -63,7 +63,7 @@ export class PaperComponent implements OnInit {
     control.push(this.formBuilder.group({
       nameOfOption:['']
     }))
-    //console.log(control)
+    console.log(control)
   }
 
   submit(){
@@ -123,6 +123,11 @@ export class PaperComponent implements OnInit {
 
   deleteData(Id:number){
     this.paperList.removeAt(Id);
+  } 
+
+  get getOption() {
+      return this.formGroup.controls.options as FormArray;
   }
+    
 
 }
