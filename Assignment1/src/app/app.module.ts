@@ -7,12 +7,16 @@ import { ValidatorsComponent } from './Components/validators/validators.componen
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators'
 import { RxReactiveDynamicFormsModule } from '@rxweb/reactive-dynamic-forms';
 import { DynamicFormsComponent } from './Components/dynamic-forms/dynamic-forms.component';
+import { StronglyTypesComponent } from './Components/strongly-types/strongly-types.component';
+import { RxGridComponent } from './Components/rx-grid/rx-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ValidatorsComponent,
-    DynamicFormsComponent
+    DynamicFormsComponent,
+    StronglyTypesComponent,
+    RxGridComponent
   ],
   imports: [
     BrowserModule,
